@@ -28,14 +28,18 @@ let arr=[
 		]
 	}
 ]
-for(let i=0;i<arr.length;i++){
-  for(let k=0;k<students.length;k++){
-    let bag=0;
-    for(let j=0;j<marks.length;j++){
-      bag+=marks[j];
+for(let k=0;k<arr.length;k++){
+    let arr1=[];
+    for(let j=0;j<arr[k].students.length;j++){
+        let sum=0;
+        for (let i=0;i<arr[k].students[j].marks.length;i++){
+            sum+=arr[k].students[j].marks[i];
+        }
+        arr1.push(sum);
     }
-    students.marks=bag;
-  }
+        if(arr1[0]>arr1[1]){
+            console.log(arr[k].grade+"-"+arr[k].students[0].name+"-"+arr1[0]);
+        }else{
+            console.log(arr[k].grade+"-"+arr[k].students[1].name+"-"+arr1[1]);
+        }
 }
-console.log(arr);
-  
